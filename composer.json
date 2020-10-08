@@ -1,0 +1,13 @@
+{
+    "require-dev": {
+        "linuxforphp/linuxforcomposer": "^2.0"
+    },
+    "scripts": {
+        "pre-update-cmd": [
+            "php -r \"if (file_exists('vendor/composer/linuxforcomposer.pid')) {copy('vendor/composer/linuxforcomposer.pid', 'linuxforcomposer.pid');}\""
+        ],
+        "post-update-cmd": [
+            "php -r \"if (file_exists('linuxforcomposer.pid')) {rename('linuxforcomposer.pid', 'vendor/composer/linuxforcomposer.pid');}\""
+        ]
+    }
+}

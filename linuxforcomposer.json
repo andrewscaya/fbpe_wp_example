@@ -1,0 +1,41 @@
+{
+    "name": "linuxforphp/linuxforcomposer",
+    "description": "A Composer interface to run 'Linux for PHP' Docker containers, Dockerfiles or docker-compose files.",
+    "single": {
+        "image": {
+            "dockerfile": {
+                "url": "Dockerfile",
+                "container-name": "fbpe_wp_example",
+                "username": "",
+                "token": ""
+            }
+        },
+        "containers": {
+            "modes": {
+                "mode1": "detached",
+                "mode2": "interactive",
+                "mode3": "tty"
+            },
+            "ports": {
+                "port1": [
+                    "8181:80"
+                ]
+            },
+            "volumes": {
+              "volume1": "${PWD}/:/srv/tempo"
+            },
+            "persist-data": {
+                "mount": "false",
+                "root-name": "userdata",
+                "directories": {
+                    "directory1": "/srv"
+                }
+            }
+        }
+    },
+    "lfphp-cloud": {
+        "account": "",
+        "username": "",
+        "token": ""
+    }
+}
